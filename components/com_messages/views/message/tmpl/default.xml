@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="Создать сообщение">
+		<message>Создание новых сообщений. Выбор типа создаваемого сообщения</message>
+	</layout>
+	<fields	name="request" >
+		<fieldset name="request">
+                    <field
+                        name="priority"
+                        type="list"
+                        class="inputbox"
+                        label="Приоритет сообщения"
+                        description="Выбрать обычное сообщение или жалоба"
+                        default="1"
+                    >
+                        <option value="0">Обычное</option>
+                        <option value="9">Жалоба</option>
+                    </field>
+                    <field
+                        name="layout"
+                        type="hidden"
+                        class="inputbox"
+                        default="edit"
+                    >
+                    </field>
+                    <field
+                            name="user_id_to"
+                            type="user"
+                            label="Попучатель"
+                            desc="Выберите менеджера по приему сообщений"
+                            />
+		</fieldset>
+	</fields>
+</metadata>
