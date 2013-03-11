@@ -19,6 +19,8 @@ JHtml::_('behavior.tooltip');
     div.messages_selections{padding: 5px 0}
     div.clear{clear: both;}
 </style>
+<!--Toolbar-->
+<?php if(!$this->_direct):?>
 <div class="messages-toolbar">
     <div class="messages-toolbar-item">
         <span onclick="if (document.adminForm.boxchecked.value==0){alert('<?=JText::_('COM_MESSAGES_SELECT_MESSAGE')?>');}else{ Joomla.submitbutton('messages.publish')}" class="messages_icon">            
@@ -36,15 +38,16 @@ JHtml::_('behavior.tooltip');
             <image src="media/com_messages/images/mail_delete.png" alt="<?=JText::_('COM_MESSAGES_SET_AS_DELETED')?>" title="<?=JText::_('COM_MESSAGES_SET_AS_DELETED')?>"/>
         </span>
     </div>
-    <?php if(!$this->_direct):?>
     <div class="messages-toolbar-item divider"></div>
     <div class="messages-toolbar-item">
         <span onclick="if (document.adminForm.boxchecked.value==0){alert('<?=JText::_('COM_MESSAGES_SELECT_MESSAGE')?>');}else{ Joomla.submitbutton('messages.replay')}" class="messages_icon">
             <image src="media/com_messages/images/mail_replyall.png" alt="<?=JText::_('COM_MESSAGES_SET_AS_REPLAY')?>" title="<?=JText::_('COM_MESSAGES_SET_AS_REPLAY')?>"/>
         </span>
     </div>
-    <?php endif;?>
 </div>
+<?php endif;?>
+<!--/Toolbar-->
+
 <div class="clear"></div>
 <form id="admin_form" action="<?php echo JRoute::_('index.php'); ?>" method="post" name="adminForm">
     <div class="form-header">
